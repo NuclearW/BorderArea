@@ -1,26 +1,30 @@
 package com.nuclearw.borderarea;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerListener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
 import com.nuclearw.borderarea.BorderArea;
 
-public class BorderAreaPlayerListener extends PlayerListener {
+public class BorderAreaPlayerListener implements Listener {
 	public static BorderArea plugin;
 
 	public BorderAreaPlayerListener(BorderArea instance) {
 		plugin = instance;
 	}
 
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		if(plugin.validLocation(player.getLocation())) return;
 		player.teleport(player.getWorld().getSpawnLocation());
 	}
 
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerMove(PlayerMoveEvent event) {
 		if(plugin.validLocation(event.getTo())) return;
 
@@ -58,6 +62,7 @@ public class BorderAreaPlayerListener extends PlayerListener {
 		}
 	}
 
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerTeleport(PlayerTeleportEvent event) {
 		if(plugin.validLocation(event.getTo())) return;
 

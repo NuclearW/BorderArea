@@ -9,7 +9,6 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 import org.bukkit.Location;
-import org.bukkit.event.Event;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.nuclearw.borderarea.BorderAreaPlayerListener;
@@ -86,10 +85,8 @@ public class BorderArea extends JavaPlugin {
 			zmax = points[0][1];
 		}
 
-		getServer().getPluginManager().registerEvent(Event.Type.PLAYER_MOVE, playerListener, Event.Priority.Highest, this);
-		getServer().getPluginManager().registerEvent(Event.Type.PLAYER_JOIN, playerListener, Event.Priority.Highest, this);
-		getServer().getPluginManager().registerEvent(Event.Type.PLAYER_TELEPORT, playerListener, Event.Priority.Highest, this);
-		getServer().getPluginManager().registerEvent(Event.Type.VEHICLE_MOVE, vehicleListener, Event.Priority.Highest, this);
+		getServer().getPluginManager().registerEvents(playerListener, this);
+		getServer().getPluginManager().registerEvents(vehicleListener, this);
 	}
 
 	public void onDisable() {

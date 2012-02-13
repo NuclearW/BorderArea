@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.nuclearw.borderarea</groupId>
     <artifactId>BorderArea</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <name>BorderArea</name>
     <url>https://github.com/NuclearW/BorderArea</url>
     <issueManagement>
