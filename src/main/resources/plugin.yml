@@ -1,0 +1,5 @@
+name: BorderArea
+main: com.nuclearw.borderarea.BorderArea
+version: ${project.version}
+author: NuclearW
+description: BorderArea allows a rectangular border to be set from a simple configuration

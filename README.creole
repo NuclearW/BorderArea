@@ -1,0 +1,7 @@
+== BorderArea
+
+BorderArea allows a rectangular border to be set from a simple configuration
+
+=== Compiling
+
+Maven 3 is required to compile BorderArea
